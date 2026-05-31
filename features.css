@@ -28,8 +28,8 @@
 .hero-stats{display:flex;flex-wrap:wrap;gap:1.6rem 2.4rem;margin-top:1.4rem}
 .hero-stats .stat{display:flex;flex-direction:column;line-height:1.15}
 .hero-stats .stat-top{display:flex;align-items:baseline;gap:.1rem}
-.hero-stats .stat-num{font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(1.8rem,3.4vw,2.5rem);color:var(--ink);font-variant-numeric:tabular-nums}
-.hero-stats .stat-suffix{font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(1.3rem,2.4vw,1.8rem);color:var(--accent)}
+.hero-stats .stat-num{font-family:'Archivo',Georgia,sans-serif;font-weight:700;font-size:clamp(1.8rem,3.4vw,2.5rem);color:var(--ink);font-variant-numeric:tabular-nums}
+.hero-stats .stat-suffix{font-family:'Archivo',Georgia,sans-serif;font-weight:700;font-size:clamp(1.3rem,2.4vw,1.8rem);color:var(--accent)}
 .hero-stats .stat-label{font-size:.86rem;color:var(--muted-2);margin-top:.15rem;max-width:18ch}
 
 /* ---------- Tax Radar ---------- */
@@ -51,7 +51,7 @@
 .radar-ring-wrap.soon .ring-prog{filter:drop-shadow(0 0 6px rgba(210,160,80,.5))}
 .radar-ring-wrap.calm .ring-prog{filter:drop-shadow(0 0 6px color-mix(in srgb,var(--accent) 60%,transparent))}
 .radar-ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.rc-days{font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:2.6rem;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.rc-days{font-family:'Archivo',Georgia,sans-serif;font-weight:700;font-size:2.6rem;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
 .rc-label{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);margin-top:.2rem}
 
 .radar-main-info{position:relative;z-index:1;display:flex;flex-direction:column;gap:.35rem}
@@ -62,7 +62,7 @@
 .rc-countdown{display:flex;gap:.5rem;margin:.5rem 0 .7rem}
 @media(max-width:520px){.rc-countdown{justify-content:center}}
 .rc-unit{min-width:48px;text-align:center;background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:.4rem .2rem}
-.rc-unit b{display:block;font-family:'Source Serif 4',Georgia,serif;font-size:1.25rem;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.rc-unit b{display:block;font-family:'Archivo',Georgia,sans-serif;font-size:1.25rem;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
 .rc-unit span{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2)}
 .rc-flip{animation:rcFlip .5s ease}
 @keyframes rcFlip{0%{transform:translateY(-4px);opacity:.3}100%{transform:none;opacity:1}}
@@ -90,3 +90,87 @@
   .radar-ring .ring-prog{transition:none}
   .rc-flip{animation:none}
 }
+
+/* ============================================================
+   EDITORIAL REDESIGN LAYER (v6) — forest / rust / bone
+   Overrides the earlier gold-era hero and adds the marketing
+   components: monogram, watermark, eyebrow, numbered services,
+   about-split, process steps, dark contact.
+   ============================================================ */
+
+/* ---- Eyebrow + section heads ---- */
+.eyebrow{font-family:'Archivo',sans-serif;font-weight:800;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.5rem}
+.sec-head{max-width:64ch;margin-bottom:.4rem}
+.sec-head h2{margin-top:.1rem;line-height:1.05}
+.sec-head p{color:var(--muted);font-size:1.05rem;margin-top:.8rem}
+
+/* ---- Hero (full-bleed forest) ---- */
+.hero{position:relative;overflow:hidden;background:var(--forest);color:var(--bone);padding:0}
+.hero-aurora{display:none}
+.hero-inner{position:relative;z-index:2;padding:5.5rem 0 6rem}
+.hero .eyebrow{color:#e6a886}
+.hero h1{color:var(--bone);max-width:16ch;margin-top:.4rem}
+.hero h1 .shine{background:none;-webkit-text-fill-color:currentColor;color:var(--bone);animation:none}
+.hero .sub{color:rgba(236,230,216,.8);max-width:54ch;font-size:clamp(17px,2vw,21px)}
+.hero .note{color:rgba(236,230,216,.6)}
+.hero .cta .btn.ghost{color:var(--bone);border-color:rgba(236,230,216,.5)}
+.hero .cta .btn.ghost:hover{background:var(--bone);color:var(--forest);border-color:var(--bone)}
+.hero-watermark{position:absolute;right:-3%;bottom:-24%;z-index:1;font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(300px,44vw,580px);line-height:.68;letter-spacing:-.06em;color:var(--bone);opacity:.05;pointer-events:none;user-select:none}
+
+/* hero stats on forest */
+.hero-stats{margin-top:3rem;padding-top:1.9rem;border-top:1px solid rgba(236,230,216,.16);gap:2rem 2.8rem}
+.hero-stats .stat-num{color:var(--bone)}
+.hero-stats .stat-suffix{color:#e6a886}
+.hero-stats .stat-label{color:rgba(236,230,216,.62)}
+.hero-stats .stat::before{content:"";display:block;width:28px;height:4px;background:var(--accent);margin-bottom:.8rem}
+
+/* ---- Numbered service cards ---- */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2.6rem}
+@media(max-width:760px){.svc-grid{grid-template-columns:1fr}}
+.svc-card{position:relative;background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:2.1rem 1.9rem;transition:transform .18s,box-shadow .18s}
+.svc-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -18px rgba(31,58,48,.45)}
+.svc-card .svc-num{position:absolute;top:1.6rem;right:1.9rem;font-family:'Archivo',sans-serif;font-weight:800;font-size:.95rem;color:color-mix(in srgb,var(--ink) 22%,transparent)}
+.svc-card h3{font-size:1.25rem;margin:0 0 .5rem}
+.svc-card h3 a{color:var(--ink);text-decoration:none;transition:color .2s}
+.svc-card h3 a:hover{color:var(--accent)}
+.svc-card p{font-size:.98rem;line-height:1.6;color:var(--muted);margin:0}
+
+/* ---- About split ---- */
+.about-split{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center}
+@media(max-width:860px){.about-split{grid-template-columns:1fr;gap:2.2rem}}
+.about-portrait{aspect-ratio:4/5;background:var(--forest);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;border-radius:10px}
+.about-portrait .pm{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(120px,18vw,210px);color:var(--bone);opacity:.12;letter-spacing:-.05em}
+.about-portrait .tag{position:absolute;left:0;right:0;bottom:0;padding:1.5rem 1.7rem;background:linear-gradient(0deg,rgba(22,41,31,.94),transparent);color:var(--bone)}
+.about-portrait .tag .t{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.1rem}
+.about-portrait .tag .s{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(236,230,216,.7);margin-top:.25rem}
+.ticks{margin-top:1.7rem;display:flex;flex-direction:column;gap:.9rem}
+.tick{display:flex;gap:.85rem;align-items:flex-start;font-weight:600;color:var(--ink)}
+.tick svg{flex:0 0 auto;margin-top:3px;color:var(--accent)}
+
+/* ---- Process steps ---- */
+.process-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.6rem}
+@media(max-width:760px){.process-row{grid-template-columns:1fr 1fr}}
+.proc-step{padding-top:1.6rem;border-top:3px solid var(--accent)}
+.proc-step .k{font-family:'Archivo',sans-serif;font-weight:800;font-size:.76rem;letter-spacing:.16em;color:var(--accent);text-transform:uppercase}
+.proc-step h3{font-size:1.15rem;margin:.55rem 0 .35rem}
+.proc-step p{font-size:.95rem;line-height:1.55;color:var(--muted);margin:0}
+
+/* ---- Dark contact ---- */
+.contact-dark{background:var(--forest-deep);color:var(--bone)}
+.contact-dark h2{color:var(--bone)}
+.contact-dark .eyebrow{color:#e6a886}
+.contact-dark .note{color:rgba(236,230,216,.72)}
+.contact-dark .card{background:rgba(236,230,216,.05);border-color:rgba(236,230,216,.16);box-shadow:none}
+.contact-dark .contact-card h3{color:var(--bone)}
+.contact-dark .contact-list li{border-color:rgba(236,230,216,.16)}
+.contact-dark .contact-list a{color:#e6a886}
+.contact-dark .calc-controls label{color:rgba(236,230,216,.82)}
+.contact-dark .calc-controls input,.contact-dark .calc-controls select{background:rgba(236,230,216,.07);border-color:rgba(236,230,216,.22);color:var(--bone)}
+.contact-dark .calc-controls input::placeholder{color:rgba(236,230,216,.45)}
+.contact-dark .slot-btn{color:var(--bone);border-color:rgba(236,230,216,.32)}
+.contact-dark .small.note,.contact-dark small.note{color:rgba(236,230,216,.6)}
+
+/* ---- Tools page intro ---- */
+.tools-intro{padding-bottom:.5rem}
+.tools-intro h1{max-width:18ch}
+.tools-intro p{color:var(--muted);max-width:60ch;font-size:1.05rem}

@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="el" data-theme="greige">
+<html lang="el">
 <head>
   <title>D.P. Accounting Solutions — Λογιστική, Φορολογία, Μισθοδοσία</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b0b0c" />
+  <meta name="theme-color" content="#1f3a30" />
   <meta name="description" content="Πλήρης λογιστική εξυπηρέτηση για επιχειρήσεις: τήρηση απλογραφικών & διπλογραφικών βιβλίων, δηλώσεις, μισθοδοσία. Υποστήριξη φακέλων χρηματοδοτικών και αποζημιώσεων." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://jimmi21.github.io/dpeconsolutions-site/index.html" />
@@ -20,9 +20,9 @@
   <meta name="twitter:image" content="https://jimmi21.github.io/dpeconsolutions-site/assets/og-image.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Source+Serif+4:opsz,wght@8..60,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=v5.0" />
-  <link rel="stylesheet" href="features.css?v=v1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=v6.0" />
+  <link rel="stylesheet" href="features.css?v=v6.0" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "AccountingService", "name": "D.P. Accounting Solutions", "email": "mailto:dpeconsolutions@gmail.com", "telephone": "+302431076222", "areaServed": "GR", "url": "https://jimmi21.github.io/dpeconsolutions-site/", "logo": "https://jimmi21.github.io/dpeconsolutions-site/assets/logo-dp-gold.png"}</script>
 </head>
@@ -30,10 +30,10 @@
   <a class="skip" href="#main">Παράκαμψη στο περιεχόμενο</a>
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
-      <a class="brand" href="index.html#home"><img id="logo" src="assets/logo-dp-gold.png" alt="Λογότυπο" class="logo square" /><span class="brand-text">D.P. Accounting Solutions</span></a>
+      <a class="brand" href="index.html#home"><img id="logo" src="assets/logo-dp-gold.png" alt="Λογότυπο" class="logo square" hidden /><span class="monogram" aria-hidden="true">ΔΠ</span><span class="brand-text">D.P. Accounting Solutions</span></a>
       <nav id="nav" class="nav">
         <a href="#services">Υπηρεσίες</a>
-        <a href="#calculator">Υπολογιστής</a>
+        <a href="tools.html">Εργαλεία</a>
         <a href="blog.html">Blog</a>
         <a href="#meeting" class="btn small">Επικοινωνία</a>
       </nav>
@@ -42,14 +42,15 @@
   </header>
 
   <main id="main">
-    <section id="home" class="hero container">
-      <div class="hero-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
-      <div class="hero-content only">
+    <section id="home" class="hero">
+      <div class="hero-watermark" aria-hidden="true">ΔΠ</div>
+      <div class="container hero-inner hero-content">
+        <span class="eyebrow">Λογιστικές &amp; Φοροτεχνικές Υπηρεσίες</span>
         <h1>Λογιστική, Φορολογία, Μισθοδοσία — <span class="shine">σωστά και στην ώρα τους.</span></h1>
-        <p class="sub">Καθημερινή εξυπηρέτηση και καθαρή διαδικασία. Παράλληλα φακέλοι χρηματοδοτικών/αποζημιώσεων.</p>
+        <p class="sub">Καθημερινή εξυπηρέτηση και καθαρή διαδικασία, με άμεση ανταπόκριση και μακροχρόνιες σχέσεις εμπιστοσύνης. Παράλληλα, φάκελοι χρηματοδοτικών και αποζημιώσεων.</p>
         <div class="cta">
           <a href="#meeting" class="btn">Κράτηση 15’</a>
-          <a href="#calculator" class="btn ghost">Υπολογιστής φόρου</a>
+          <a href="tools.html" class="btn ghost">Εργαλεία &amp; υπολογιστές</a>
         </div>
         <p class="note">Ανταπόκριση εντός 24 ωρών (εργάσιμες).</p>
         <div class="hero-stats" id="heroStats" aria-label="Στατιστικά">
@@ -61,123 +62,65 @@
       </div>
     </section>
 
-    <section id="tax-radar" class="section alt">
-      <div class="container">
-        <div class="radar-head reveal">
-          <h2>Φορολογικό Ραντάρ</h2>
-          <p class="lead">Ζωντανή αντίστροφη μέτρηση για τις επόμενες φορολογικές υποχρεώσεις. Καμία προθεσμία δεν σου ξεφεύγει.</p>
-        </div>
-        <div class="radar-grid">
-          <div class="radar-main card reveal">
-            <div class="radar-ring-wrap" id="rcRingWrap">
-              <svg class="radar-ring" id="rcRing" viewBox="0 0 200 200" aria-hidden="true">
-                <defs>
-                  <linearGradient id="radarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="var(--accent)"/>
-                    <stop offset="100%" stop-color="var(--accent-2)"/>
-                  </linearGradient>
-                </defs>
-                <circle class="ring-track" cx="100" cy="100" r="88"></circle>
-                <circle class="ring-prog" id="rcProg" cx="100" cy="100" r="88"></circle>
-              </svg>
-              <div class="radar-ring-center">
-                <div class="rc-days" id="rcDays">—</div>
-                <div class="rc-label">ημέρες</div>
-              </div>
-            </div>
-            <div class="radar-main-info">
-              <span class="radar-badge" id="rcBadge">Επόμενη προθεσμία</span>
-              <h3 id="rcTitle">—</h3>
-              <p class="rc-date" id="rcDate">—</p>
-              <div class="rc-countdown" id="rcCountdown" aria-hidden="true">
-                <span class="rc-unit" data-u="d"><b>0</b><span>ημέρες</span></span>
-                <span class="rc-unit" data-u="h"><b>00</b><span>ώρες</span></span>
-                <span class="rc-unit" data-u="m"><b>00</b><span>λεπτά</span></span>
-                <span class="rc-unit" data-u="s"><b>00</b><span>δευτ.</span></span>
-              </div>
-              <a href="#meeting" class="btn small">Ανάθεσέ το σε εμάς</a>
-            </div>
-          </div>
-          <div class="radar-list card reveal d1">
-            <div class="result-head">Επερχόμενες προθεσμίες</div>
-            <ul class="deadline-list" id="deadlineList"></ul>
-            <p class="note">Ενδεικτικές, επαναλαμβανόμενες ημερομηνίες — επιβεβαιώνονται κατά περίπτωση.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="services" class="section">
       <div class="container">
-        <h2 class="reveal">Υπηρεσίες</h2>
-        <div class="cards grid-3 no-icons">
-          <article class="card reveal"><h3><a href="services/logistiki.html">Λογιστική</a></h3><p>Τήρηση απλογραφικών & διπλογραφικών βιβλίων, δηλώσεις, μηνιαίες υποχρεώσεις.</p></article>
-          <article class="card reveal d1"><h3><a href="services/forologia.html">Φορολογία</a></h3><p>Εισόδημα, ΦΠΑ, παρακρατήσεις, έλεγχοι, υποβολές.</p></article>
-          <article class="card reveal d2"><h3><a href="services/misthodisia.html">Μισθοδοσία</a></h3><p>Προσλήψεις, συμβάσεις, μισθοδοσία, προγράμματα ΟΑΕΔ.</p></article>
-          <article class="card reveal"><h3><a href="services/xrimatodotika.html">Χρηματοδοτικά</a></h3><p>Επιλεξιμότητα, checklist, φάκελος, υποβολή/παρακολούθηση.</p></article>
-          <article class="card reveal d1"><h3>Αποζημιώσεις/Αρωγές</h3><p>Καταγραφή ζημιών, τεκμηρίωση, σύνταξη φακέλου.</p></article>
-          <article class="card reveal d2"><h3>Ρυθμίσεις & Εξωδικαστικός</h3><p>Εκτίμηση, προσομοίωση, κατάθεση/παρακολούθηση.</p></article>
+        <div class="sec-head reveal">
+          <span class="eyebrow">Τι κάνουμε</span>
+          <h2>Ολοκληρωμένη λογιστική &amp; φοροτεχνική υποστήριξη</h2>
+          <p>Καλύπτουμε όλο τον κύκλο ζωής της επιχείρησης — από την έναρξη και την τήρηση βιβλίων μέχρι τον φορολογικό σχεδιασμό και τη συμβουλευτική, με στόχο τη νομοθετική συμμόρφωση και την οικονομική σας ωφέλεια.</p>
+        </div>
+        <div class="svc-grid">
+          <article class="svc-card reveal"><span class="svc-num">01</span><h3><a href="services/logistiki.html">Λογιστική</a></h3><p>Τήρηση απλογραφικών &amp; διπλογραφικών βιβλίων, δηλώσεις, μηνιαίες υποχρεώσεις.</p></article>
+          <article class="svc-card reveal d1"><span class="svc-num">02</span><h3><a href="services/forologia.html">Φορολογία</a></h3><p>Εισόδημα, ΦΠΑ, παρακρατήσεις, έλεγχοι, υποβολές.</p></article>
+          <article class="svc-card reveal"><span class="svc-num">03</span><h3><a href="services/misthodisia.html">Μισθοδοσία</a></h3><p>Προσλήψεις, συμβάσεις, μισθοδοσία, προγράμματα ΟΑΕΔ.</p></article>
+          <article class="svc-card reveal d1"><span class="svc-num">04</span><h3><a href="services/xrimatodotika.html">Χρηματοδοτικά</a></h3><p>Επιλεξιμότητα, checklist, φάκελος, υποβολή/παρακολούθηση.</p></article>
+          <article class="svc-card reveal"><span class="svc-num">05</span><h3>Αποζημιώσεις/Αρωγές</h3><p>Καταγραφή ζημιών, τεκμηρίωση, σύνταξη φακέλου.</p></article>
+          <article class="svc-card reveal d1"><span class="svc-num">06</span><h3>Ρυθμίσεις &amp; Εξωδικαστικός</h3><p>Εκτίμηση, προσομοίωση, κατάθεση/παρακολούθηση.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="calculator" class="section">
+    <section id="about" class="section alt">
+      <div class="container about-split">
+        <div class="reveal">
+          <span class="eyebrow">Το γραφείο</span>
+          <h2>Η ομάδα μας, δίπλα σας σε κάθε υποχρέωση.</h2>
+          <p>Συνδυάζουμε χρόνια εμπειρίας στη λογιστική και τη φοροτεχνική με σύγχρονα εργαλεία και προσωπική σχέση με κάθε πελάτη. Δεν είμαστε απλώς οι λογιστές σας — είμαστε ο σύμβουλος που σηκώνει το τηλέφωνο.</p>
+          <div class="ticks">
+            <div class="tick"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4 10-11"/></svg>Άμεση ανταπόκριση &amp; προσωπική επαφή</div>
+            <div class="tick"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4 10-11"/></svg>Διαφάνεια στις αμοιβές, χωρίς εκπλήξεις</div>
+            <div class="tick"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4 10-11"/></svg>Ενημέρωση για κάθε αλλαγή που σας αφορά</div>
+          </div>
+        </div>
+        <div class="about-portrait reveal d1">
+          <span class="pm" aria-hidden="true">ΔΠ</span>
+          <div class="tag"><div class="t">Η ομάδα μας</div><div class="s">Δίπλα σας, πανελλαδικά</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section">
       <div class="container">
-        <h2>Υπολογιστής Φόρου</h2>
-        <p class="lead">Κλίμακες, τέκνα, προκαταβολή, τέλος επιτηδεύματος, προπληρωμές, πιστώσεις.</p>
-        <div class="card calc-pro" id="calcCard">
-          <div class="calc-progress" id="calcProgress"><div class="calc-progress-bar"></div></div>
-          <div class="calc-controls">
-            <div class="row">
-              <label>Έτος<select id="taxYear"><option value="2025">2025</option><option value="2024">2024</option></select></label>
-              <label>Προκαταβολή<select id="advanceRate"><option value="0">0%</option><option value="0.55">55%</option><option value="1.00">100%</option></select></label>
-              <label>Τέλος επιτηδεύματος (€)<input type="number" id="businessDuty" min="0" step="10" /></label>
-            </div>
-            <div class="row">
-              <label>Μισθωτές/Συντάξεις (€)<input type="number" id="incSalary" min="0" step="100" /></label>
-              <label>Επιχειρ. δραστηριότητα (€)<input type="number" id="incBusiness" min="0" step="100" /></label>
-              <label>Ακίνητα (€)<input type="number" id="incRental" min="0" step="100" /></label>
-            </div>
-            <div class="row">
-              <label>Εξαρτώμενα τέκνα<input type="number" id="children" min="0" step="1" /></label>
-              <label>Πληρωμές έναντι (–€)<input type="number" id="prepaid" min="0" step="50" /></label>
-              <label>Πιστώσεις φόρου (–€)<input type="number" id="credits" min="0" step="50" /></label>
-            </div>
-            <div class="row actions">
-              <button class="btn" id="calcBtn">Υπολογισμός</button>
-              <button class="btn ghost" id="clearBtn">Καθαρισμός</button>
-              <button class="btn ghost" id="printBtn">Εκτύπωση / PDF</button>
-              <button class="btn ghost" id="csvBtn">Λήψη CSV</button>
-            </div>
-            <p class="note">Ενδεικτικός υπολογισμός.</p>
-          </div>
-          <div class="calc-results">
-            <div class="summary card">
-              <div class="result-head">Σύνοψη</div>
-              <div class="row"><span>Φόρος Μισθωτών/Συντάξεων:</span><strong id="taxSalary">—</strong></div>
-              <div class="row"><span>Φόρος Επιχειρ. δραστηριότητας:</span><strong id="taxBusiness">—</strong></div>
-              <div class="row"><span>Προκαταβολή:</span><strong id="taxAdvance">—</strong></div>
-              <div class="row"><span>Φόρος Ακινήτων:</span><strong id="taxRental">—</strong></div>
-              <div class="row"><span>Τέλος επιτηδεύματος:</span><strong id="taxDuty">—</strong></div>
-              <div class="row"><span>Προπληρωμές:</span><strong id="taxPrepaid">—</strong></div>
-              <div class="row"><span>Πιστώσεις:</span><strong id="taxCredits">—</strong></div>
-              <div class="sep"></div>
-              <div class="row total"><span>Συνολικό:</span><strong id="taxTotal">—</strong></div>
-            </div>
-            <div class="breakdowns">
-              <div class="card"><h4>Μισθωτά/Συντάξεις</h4><table class="tbl" id="tblSalary"><thead><tr><th scope="col">Κλίμακες Φορολογίας</th><th scope="col">Ποσό</th><th scope="col">Συντελεστής</th><th scope="col">Φόρος</th></tr></thead><tbody></tbody></table></div>
-              <div class="card"><h4>Επιχειρ. δραστηριότητα</h4><table class="tbl" id="tblBusiness"><thead><tr><th scope="col">Κλίμακες Φορολογίας</th><th scope="col">Ποσό</th><th scope="col">Συντελεστής</th><th scope="col">Φόρος</th></tr></thead><tbody></tbody></table></div>
-              <div class="card"><h4>Ακίνητα</h4><table class="tbl" id="tblRental"><thead><tr><th scope="col">Κλίμακες Φορολογίας</th><th scope="col">Ποσό</th><th scope="col">Συντελεστής</th><th scope="col">Φόρος</th></tr></thead><tbody></tbody></table></div>
-            </div>
-          </div>
+        <div class="sec-head reveal">
+          <span class="eyebrow">Πώς δουλεύουμε</span>
+          <h2>Απλή, ξεκάθαρη συνεργασία</h2>
+        </div>
+        <div class="process-row">
+          <div class="proc-step reveal"><div class="k">01 · Γνωριμία</div><h3>Πρώτο ραντεβού</h3><p>Ακούμε τις ανάγκες σας και κατανοούμε την επιχείρηση ή την προσωπική σας κατάσταση.</p></div>
+          <div class="proc-step reveal d1"><div class="k">02 · Σχέδιο</div><h3>Πρόταση &amp; αμοιβή</h3><p>Σαφής πρόταση υπηρεσιών με διαφανές κόστος, προσαρμοσμένη στις πραγματικές σας ανάγκες.</p></div>
+          <div class="proc-step reveal d2"><div class="k">03 · Ανάληψη</div><h3>Οργάνωση</h3><p>Αναλαμβάνουμε βιβλία, δηλώσεις και υποχρεώσεις, με ψηφιακή ροή παραστατικών.</p></div>
+          <div class="proc-step reveal d3"><div class="k">04 · Υποστήριξη</div><h3>Συνεχής επαφή</h3><p>Είμαστε δίπλα σας όλο τον χρόνο — όχι μόνο στις προθεσμίες.</p></div>
         </div>
       </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="section">
+    <section id="testimonials" class="section alt">
       <div class="container">
-        <h2>Τι Λένε οι Πελάτες μας</h2>
+        <div class="sec-head reveal">
+          <span class="eyebrow">Μαρτυρίες</span>
+          <h2>Τι λένε οι πελάτες μας</h2>
+        </div>
         <div class="testimonials-carousel" id="testimonialsCarousel">
           <div class="testimonial-track">
             <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
@@ -226,47 +169,11 @@
       </div>
     </section>
 
-    <!-- VAT Calculator Section -->
-    <section id="vat-calculator" class="section alt">
-      <div class="container">
-        <h2>Υπολογιστής ΦΠΑ</h2>
-        <p class="lead">Γρήγορος υπολογισμός ΦΠΑ για τιμολόγια και αγορές.</p>
-        <div class="card vat-calc">
-          <div class="calc-controls">
-            <div class="row">
-              <label>Συντελεστής ΦΠΑ
-                <select id="vatRate">
-                  <option value="0.24">24% (Κανονικός)</option>
-                  <option value="0.13">13% (Μειωμένος)</option>
-                  <option value="0.06">6% (Υπερμειωμένος)</option>
-                </select>
-              </label>
-              <label>Καθαρή αξία (€)
-                <input type="number" id="vatNet" min="0" step="0.01" placeholder="π.χ. 100">
-              </label>
-              <label>Τελική τιμή με ΦΠΑ (€)
-                <input type="number" id="vatGross" min="0" step="0.01" placeholder="π.χ. 124">
-              </label>
-            </div>
-            <div class="row actions">
-              <button class="btn small" id="vatCalcNet">Υπολόγισε από Καθαρή</button>
-              <button class="btn small ghost" id="vatCalcGross">Υπολόγισε από Τελική</button>
-            </div>
-          </div>
-          <div class="vat-results card" id="vatResults" style="margin-top:1rem;display:none">
-            <div class="row"><span>Καθαρή αξία:</span><strong id="vatResNet">—</strong></div>
-            <div class="row"><span>ΦΠΑ (<span id="vatResRate">24</span>%):</span><strong id="vatResVat">—</strong></div>
-            <div class="sep"></div>
-            <div class="row total"><span>Τελική τιμή:</span><strong id="vatResGross">—</strong></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="meeting" class="section contact-section alt">
+    <section id="meeting" class="section contact-section contact-dark">
       <div class="container grid-2">
         <div>
-          <h2>Ραντεβού/Επικοινωνία</h2>
+          <span class="eyebrow">Επικοινωνία</span>
+          <h2>Ας μιλήσουμε για τα οικονομικά σας.</h2>
           <p class="note">Κλείσε 15’ — θα λάβεις .ics και ενημερωνόμαστε με email.</p>
           <div class="card" style="margin:.6rem 0 1rem">
             <form id="meetForm" class="form" action="https://formsubmit.co/dpeconsolutions@gmail.com" method="POST" target="_blank" onsubmit="return false">
@@ -317,17 +224,15 @@
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div class="footer-col"><p>© <span id="year"></span> D.P. Accounting Solutions • Λογιστικές Υπηρεσίες</p></div>
+      <div class="footer-col"><p><span class="monogram" aria-hidden="true" style="vertical-align:middle;margin-right:.5rem">ΔΠ</span>© <span id="year"></span> D.P. Accounting Solutions • Λογιστικές Υπηρεσίες</p></div>
       <div class="footer-col theme-col">
-        <label class="theme-switch"><span>Θέμα:</span>
-          <select id="themeSelect"><option value="dark">Σκοτεινό</option><option value="greige" selected>Γκρι‑μπεζ</option><option value="grey">Γκρι</option><option value="light">Φωτεινό</option></select>
-        </label>
+        <button id="themeToggle" class="theme-toggle" aria-label="Εναλλαγή θέματος" aria-pressed="false"><span class="theme-toggle-light"><span class="ico">☀</span> Φωτεινό</span><span class="theme-toggle-dark"><span class="ico">🌙</span> Σκοτεινό</span></button>
       </div>
     </div>
   </footer>
 
-  <script src="script.js?v=v5.0" defer></script>
-  <script src="features.js?v=v1.0" defer></script>
+  <script src="script.js?v=v6.0" defer></script>
+  <script src="features.js?v=v6.0" defer></script>
   <!-- Tawk.to Live Chat - Replace YOUR_PROPERTY_ID with actual ID from tawk.to dashboard -->
   <script type="text/javascript">
   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
