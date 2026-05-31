@@ -22,6 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Source+Serif+4:opsz,wght@8..60,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=v5.0" />
+  <link rel="stylesheet" href="features.css?v=v1.0" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "AccountingService", "name": "D.P. Accounting Solutions", "email": "mailto:dpeconsolutions@gmail.com", "telephone": "+302431076222", "areaServed": "GR", "url": "https://jimmi21.github.io/dpeconsolutions-site/", "logo": "https://jimmi21.github.io/dpeconsolutions-site/assets/logo-dp-gold.png"}</script>
 </head>
@@ -42,27 +43,80 @@
 
   <main id="main">
     <section id="home" class="hero container">
+      <div class="hero-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="hero-content only">
-        <h1>Λογιστική, Φορολογία, Μισθοδοσία — σωστά και στην ώρα τους.</h1>
+        <h1>Λογιστική, Φορολογία, Μισθοδοσία — <span class="shine">σωστά και στην ώρα τους.</span></h1>
         <p class="sub">Καθημερινή εξυπηρέτηση και καθαρή διαδικασία. Παράλληλα φακέλοι χρηματοδοτικών/αποζημιώσεων.</p>
         <div class="cta">
           <a href="#meeting" class="btn">Κράτηση 15’</a>
           <a href="#calculator" class="btn ghost">Υπολογιστής φόρου</a>
         </div>
         <p class="note">Ανταπόκριση εντός 24 ωρών (εργάσιμες).</p>
+        <div class="hero-stats" id="heroStats" aria-label="Στατιστικά">
+          <div class="stat"><div class="stat-top"><span class="stat-num" data-target="12">0</span><span class="stat-suffix">+</span></div><span class="stat-label">χρόνια εμπειρίας</span></div>
+          <div class="stat"><div class="stat-top"><span class="stat-num" data-target="350">0</span><span class="stat-suffix">+</span></div><span class="stat-label">επιχειρήσεις μας εμπιστεύονται</span></div>
+          <div class="stat"><div class="stat-top"><span class="stat-num" data-target="24">0</span><span class="stat-suffix">ω</span></div><span class="stat-label">ανταπόκριση (εργάσιμες)</span></div>
+          <div class="stat"><div class="stat-top"><span class="stat-num" data-target="0">0</span><span class="stat-suffix">€</span></div><span class="stat-label">πρόστιμα από χαμένη προθεσμία</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tax-radar" class="section alt">
+      <div class="container">
+        <div class="radar-head reveal">
+          <h2>Φορολογικό Ραντάρ</h2>
+          <p class="lead">Ζωντανή αντίστροφη μέτρηση για τις επόμενες φορολογικές υποχρεώσεις. Καμία προθεσμία δεν σου ξεφεύγει.</p>
+        </div>
+        <div class="radar-grid">
+          <div class="radar-main card reveal">
+            <div class="radar-ring-wrap" id="rcRingWrap">
+              <svg class="radar-ring" id="rcRing" viewBox="0 0 200 200" aria-hidden="true">
+                <defs>
+                  <linearGradient id="radarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="var(--accent)"/>
+                    <stop offset="100%" stop-color="var(--accent-2)"/>
+                  </linearGradient>
+                </defs>
+                <circle class="ring-track" cx="100" cy="100" r="88"></circle>
+                <circle class="ring-prog" id="rcProg" cx="100" cy="100" r="88"></circle>
+              </svg>
+              <div class="radar-ring-center">
+                <div class="rc-days" id="rcDays">—</div>
+                <div class="rc-label">ημέρες</div>
+              </div>
+            </div>
+            <div class="radar-main-info">
+              <span class="radar-badge" id="rcBadge">Επόμενη προθεσμία</span>
+              <h3 id="rcTitle">—</h3>
+              <p class="rc-date" id="rcDate">—</p>
+              <div class="rc-countdown" id="rcCountdown" aria-hidden="true">
+                <span class="rc-unit" data-u="d"><b>0</b><span>ημέρες</span></span>
+                <span class="rc-unit" data-u="h"><b>00</b><span>ώρες</span></span>
+                <span class="rc-unit" data-u="m"><b>00</b><span>λεπτά</span></span>
+                <span class="rc-unit" data-u="s"><b>00</b><span>δευτ.</span></span>
+              </div>
+              <a href="#meeting" class="btn small">Ανάθεσέ το σε εμάς</a>
+            </div>
+          </div>
+          <div class="radar-list card reveal d1">
+            <div class="result-head">Επερχόμενες προθεσμίες</div>
+            <ul class="deadline-list" id="deadlineList"></ul>
+            <p class="note">Ενδεικτικές, επαναλαμβανόμενες ημερομηνίες — επιβεβαιώνονται κατά περίπτωση.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="services" class="section">
       <div class="container">
-        <h2>Υπηρεσίες</h2>
+        <h2 class="reveal">Υπηρεσίες</h2>
         <div class="cards grid-3 no-icons">
-          <article class="card"><h3><a href="services/logistiki.html">Λογιστική</a></h3><p>Τήρηση απλογραφικών & διπλογραφικών βιβλίων, δηλώσεις, μηνιαίες υποχρεώσεις.</p></article>
-          <article class="card"><h3><a href="services/forologia.html">Φορολογία</a></h3><p>Εισόδημα, ΦΠΑ, παρακρατήσεις, έλεγχοι, υποβολές.</p></article>
-          <article class="card"><h3><a href="services/misthodisia.html">Μισθοδοσία</a></h3><p>Προσλήψεις, συμβάσεις, μισθοδοσία, προγράμματα ΟΑΕΔ.</p></article>
-          <article class="card"><h3><a href="services/xrimatodotika.html">Χρηματοδοτικά</a></h3><p>Επιλεξιμότητα, checklist, φάκελος, υποβολή/παρακολούθηση.</p></article>
-          <article class="card"><h3>Αποζημιώσεις/Αρωγές</h3><p>Καταγραφή ζημιών, τεκμηρίωση, σύνταξη φακέλου.</p></article>
-          <article class="card"><h3>Ρυθμίσεις & Εξωδικαστικός</h3><p>Εκτίμηση, προσομοίωση, κατάθεση/παρακολούθηση.</p></article>
+          <article class="card reveal"><h3><a href="services/logistiki.html">Λογιστική</a></h3><p>Τήρηση απλογραφικών & διπλογραφικών βιβλίων, δηλώσεις, μηνιαίες υποχρεώσεις.</p></article>
+          <article class="card reveal d1"><h3><a href="services/forologia.html">Φορολογία</a></h3><p>Εισόδημα, ΦΠΑ, παρακρατήσεις, έλεγχοι, υποβολές.</p></article>
+          <article class="card reveal d2"><h3><a href="services/misthodisia.html">Μισθοδοσία</a></h3><p>Προσλήψεις, συμβάσεις, μισθοδοσία, προγράμματα ΟΑΕΔ.</p></article>
+          <article class="card reveal"><h3><a href="services/xrimatodotika.html">Χρηματοδοτικά</a></h3><p>Επιλεξιμότητα, checklist, φάκελος, υποβολή/παρακολούθηση.</p></article>
+          <article class="card reveal d1"><h3>Αποζημιώσεις/Αρωγές</h3><p>Καταγραφή ζημιών, τεκμηρίωση, σύνταξη φακέλου.</p></article>
+          <article class="card reveal d2"><h3>Ρυθμίσεις & Εξωδικαστικός</h3><p>Εκτίμηση, προσομοίωση, κατάθεση/παρακολούθηση.</p></article>
         </div>
       </div>
     </section>
@@ -273,6 +327,7 @@
   </footer>
 
   <script src="script.js?v=v5.0" defer></script>
+  <script src="features.js?v=v1.0" defer></script>
   <!-- Tawk.to Live Chat - Replace YOUR_PROPERTY_ID with actual ID from tawk.to dashboard -->
   <script type="text/javascript">
   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
