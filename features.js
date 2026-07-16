@@ -104,11 +104,25 @@
     var DOW = ['Κυρ', 'Δευ', 'Τρ', 'Τετ', 'Πεμ', 'Παρ', 'Σαβ'];
     function fmtDate(d) { return DOW[d.getDay()] + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear(); }
 
-    var now = new Date();
-    var items = DEFS.map(function (def) {
-      var due = nextDate(def, now);
-      return { name: def.name, meta: def.meta, due: due };
-    }).sort(function (a, b) { return a.due - b.due; });
+    // Fallback: compute next occurrences from the recurring rules above.
+    function itemsFromDefs() {
+      var now = new Date();
+      return DEFS.map(function (def) { return { name: def.name, meta: def.meta, due: nextDate(def, now) }; })
+        .sort(function (a, b) { return a.due - b.due; });
+    }
+    // Primary: concrete dated items from the auto-built JSON (data/deadlines.json).
+    function itemsFromJson(data) {
+      var floor = Date.now() - DAY;
+      return ((data && data.items) || []).map(function (it) {
+        var p = String(it.date || '').split('-');
+        return { name: it.name, meta: it.meta || '', due: new Date(+p[0], (+p[1] || 1) - 1, (+p[2] || 1), 23, 59, 59) };
+      }).filter(function (it) { return !isNaN(it.due.getTime()) && it.due.getTime() >= floor; })
+        .sort(function (a, b) { return a.due - b.due; }).slice(0, 8);
+    }
+
+    function start(items) {
+      if (!items || !items.length) return;
+      var now = new Date();
 
     // ----- Render upcoming list -----
     if (listEl) {
@@ -180,7 +194,16 @@
       }
     }
 
-    tick();
-    if (!reduce) setInterval(tick, 1000);
+      tick();
+      if (!reduce) setInterval(tick, 1000);
+    }
+
+    // Load auto-updated data, fall back to rules on any failure (e.g. file://).
+    if (typeof fetch === 'function') {
+      fetch('data/deadlines.json', { cache: 'no-cache' })
+        .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+        .then(function (data) { var it = itemsFromJson(data); start(it.length ? it : itemsFromDefs()); })
+        .catch(function () { start(itemsFromDefs()); });
+    } else { start(itemsFromDefs()); }
   })();
 })();
