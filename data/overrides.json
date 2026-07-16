@@ -1,0 +1,6 @@
+{
+  "_readme": "Έκτακτες / ετήσιες φορολογικές προθεσμίες & παρατάσεις. Πρόσθεσε/άλλαξε εγγραφές στο 'items' και κάνε commit — το GitHub Action θα ξαναχτίσει το data/deadlines.json. Μορφή: date=YYYY-MM-DD, category ∈ vat|payroll|withholding|other.",
+  "items": [
+    { "date": "2026-09-30", "name": "ΕΝΦΙΑ — δόση", "meta": "Φόρος ακίνητης περιουσίας (επιβεβαιώστε)", "category": "other" }
+  ]
+}

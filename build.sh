@@ -18,7 +18,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 # Version from styles.css
-VERSION="v6.1"
+VERSION="v6.2"
 
 echo -e "${GREEN}Version:${NC} $VERSION"
 echo ""
