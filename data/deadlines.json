@@ -1,14 +1,8 @@
 {
-  "generated": "2026-07-26T06:33:02.105Z",
+  "generated": "2026-07-27T07:27:23.559Z",
   "source": "auto: recurring rules + data/overrides.json",
   "note": "Ενδεικτικές ημερομηνίες. Οι έκτακτες/ετήσιες μπαίνουν από data/overrides.json.",
   "items": [
-    {
-      "date": "2026-07-26",
-      "name": "VIES / Intrastat",
-      "meta": "Ενδοκοινοτικές συναλλαγές",
-      "category": "other"
-    },
     {
       "date": "2026-07-31",
       "name": "ΦΠΑ — Περιοδική δήλωση",
