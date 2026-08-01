@@ -1,26 +1,8 @@
 {
-  "generated": "2026-07-31T06:40:59.393Z",
+  "generated": "2026-08-01T06:25:50.212Z",
   "source": "auto: recurring rules + data/overrides.json",
   "note": "Ενδεικτικές ημερομηνίες. Οι έκτακτες/ετήσιες μπαίνουν από data/overrides.json.",
   "items": [
-    {
-      "date": "2026-07-31",
-      "name": "ΦΠΑ — Περιοδική δήλωση",
-      "meta": "Μηνιαία υποβολή & καταβολή",
-      "category": "vat"
-    },
-    {
-      "date": "2026-07-31",
-      "name": "Παρακρατούμενοι φόροι",
-      "meta": "Απόδοση παρακρατήσεων",
-      "category": "withholding"
-    },
-    {
-      "date": "2026-07-31",
-      "name": "ΑΠΔ / Εισφορές ΕΦΚΑ",
-      "meta": "Μισθοδοσία προηγ. μήνα",
-      "category": "payroll"
-    },
     {
       "date": "2026-08-26",
       "name": "VIES / Intrastat",
