@@ -1,204 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="el">
 <head>
-  <title>Εργαλεία / Υπολογιστές — D.P. Accounting Solutions</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#1f3a30" />
-  <meta name="description" content="Δωρεάν εργαλεία: υπολογιστής φόρου εισοδήματος, υπολογιστής ΦΠΑ και Φορολογικό Ραντάρ με ζωντανή αντίστροφη μέτρηση προθεσμιών." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://jimmi21.github.io/dpeconsolutions-site/tools.html" />
-  <meta property="og:locale" content="el_GR" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Εργαλεία / Υπολογιστές — D.P. Accounting Solutions" />
-  <meta property="og:description" content="Υπολογιστής φόρου, υπολογιστής ΦΠΑ και Φορολογικό Ραντάρ προθεσμιών." />
-  <meta property="og:image" content="https://jimmi21.github.io/dpeconsolutions-site/assets/og-image.jpg" />
-  <meta property="og:url" content="https://jimmi21.github.io/dpeconsolutions-site/tools.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=v6.2" />
-  <link rel="stylesheet" href="features.css?v=v6.2" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Εργαλεία — D.P. Accounting Solutions</title>
+  <meta name="description" content="Τοπικός υπολογιστής ΦΠΑ με σαφή όρια χρήσης και χωρίς αποθήκευση δεδομένων.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#06101f">
+  <link rel="canonical" href="https://lone-side.github.io/dpeconsolutions-site/tools.html">
+  <meta property="og:locale" content="el_GR"><meta property="og:type" content="website">
+  <meta property="og:title" content="Εργαλεία — D.P. Accounting Solutions"><meta property="og:description" content="Τοπικός υπολογιστής ΦΠΑ με σαφή όρια χρήσης και χωρίς αποθήκευση δεδομένων.">
+  <meta property="og:url" content="https://lone-side.github.io/dpeconsolutions-site/tools.html"><meta property="og:image" content="https://lone-side.github.io/dpeconsolutions-site/assets/og-image-2026.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="pages-2026.css?v=1.0">
 </head>
 <body>
-  <a class="skip" href="#main">Παράκαμψη στο περιεχόμενο</a>
-  <header class="site-header" id="siteHeader">
-    <div class="container nav-wrap">
-      <a class="brand" href="index.html#home"><img id="logo" src="assets/logo-dp-gold.png" alt="Λογότυπο" class="logo square" hidden /><span class="monogram" aria-hidden="true">ΔΠ</span><span class="brand-text">D.P. Accounting Solutions</span></a>
-      <nav id="nav" class="nav">
-        <a href="index.html#services">Υπηρεσίες</a>
-        <a href="tools.html">Εργαλεία</a>
-        <a href="blog.html">Blog</a>
-        <a href="index.html#meeting" class="btn small">Επικοινωνία</a>
-      </nav>
-      <button id="menuBtn" class="menu-btn" aria-label="Μενού πλοήγησης">☰</button>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="section tools-intro">
-      <div class="container">
-        <span class="eyebrow">Εργαλεία</span>
-        <h1>Υπολογιστές &amp; Φορολογικό Ραντάρ</h1>
-        <p>Δωρεάν, ενδεικτικά εργαλεία για γρήγορες εκτιμήσεις — υπολογιστής φόρου εισοδήματος, υπολογιστής ΦΠΑ και ζωντανή αντίστροφη μέτρηση για τις επόμενες φορολογικές προθεσμίες.</p>
-      </div>
-    </section>
-
-    <section id="tax-radar" class="section alt">
-      <div class="container">
-        <div class="radar-head reveal">
-          <h2>Φορολογικό Ραντάρ</h2>
-          <p class="lead">Ζωντανή αντίστροφη μέτρηση για τις επόμενες φορολογικές υποχρεώσεις. Καμία προθεσμία δεν σου ξεφεύγει.</p>
-        </div>
-        <div class="radar-grid">
-          <div class="radar-main card reveal">
-            <div class="radar-ring-wrap" id="rcRingWrap">
-              <svg class="radar-ring" id="rcRing" viewBox="0 0 200 200" aria-hidden="true">
-                <defs>
-                  <linearGradient id="radarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="var(--accent)"/>
-                    <stop offset="100%" stop-color="var(--accent-2)"/>
-                  </linearGradient>
-                </defs>
-                <circle class="ring-track" cx="100" cy="100" r="88"></circle>
-                <circle class="ring-prog" id="rcProg" cx="100" cy="100" r="88"></circle>
-              </svg>
-              <div class="radar-ring-center">
-                <div class="rc-days" id="rcDays">—</div>
-                <div class="rc-label">ημέρες</div>
-              </div>
-            </div>
-            <div class="radar-main-info">
-              <span class="radar-badge" id="rcBadge">Επόμενη προθεσμία</span>
-              <h3 id="rcTitle">—</h3>
-              <p class="rc-date" id="rcDate">—</p>
-              <div class="rc-countdown" id="rcCountdown" aria-hidden="true">
-                <span class="rc-unit" data-u="d"><b>0</b><span>ημέρες</span></span>
-                <span class="rc-unit" data-u="h"><b>00</b><span>ώρες</span></span>
-                <span class="rc-unit" data-u="m"><b>00</b><span>λεπτά</span></span>
-                <span class="rc-unit" data-u="s"><b>00</b><span>δευτ.</span></span>
-              </div>
-              <a href="index.html#meeting" class="btn small">Ανάθεσέ το σε εμάς</a>
-            </div>
-          </div>
-          <div class="radar-list card reveal d1">
-            <div class="result-head">Επερχόμενες προθεσμίες</div>
-            <ul class="deadline-list" id="deadlineList"></ul>
-            <p class="note">Ενδεικτικές, επαναλαμβανόμενες ημερομηνίες — επιβεβαιώνονται κατά περίπτωση.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="calculator" class="section">
-      <div class="container">
-        <h2>Υπολογιστής Φόρου</h2>
-        <p class="lead">Κλίμακες, τέκνα, προκαταβολή, τέλος επιτηδεύματος, προπληρωμές, πιστώσεις.</p>
-        <div class="card calc-pro" id="calcCard">
-          <div class="calc-progress" id="calcProgress"><div class="calc-progress-bar"></div></div>
-          <div class="calc-controls">
-            <div class="row">
-              <label>Έτος<select id="taxYear"><option value="2025">2025</option><option value="2024">2024</option></select></label>
-              <label>Προκαταβολή<select id="advanceRate"><option value="0">0%</option><option value="0.55">55%</option><option value="1.00">100%</option></select></label>
-              <label>Τέλος επιτηδεύματος (€)<input type="number" id="businessDuty" min="0" step="10" /></label>
-            </div>
-            <div class="row">
-              <label>Μισθωτές/Συντάξεις (€)<input type="number" id="incSalary" min="0" step="100" /></label>
-              <label>Επιχειρ. δραστηριότητα (€)<input type="number" id="incBusiness" min="0" step="100" /></label>
-              <label>Ακίνητα (€)<input type="number" id="incRental" min="0" step="100" /></label>
-            </div>
-            <div class="row">
-              <label>Εξαρτώμενα τέκνα<input type="number" id="children" min="0" step="1" /></label>
-              <label>Πληρωμές έναντι (–€)<input type="number" id="prepaid" min="0" step="50" /></label>
-              <label>Πιστώσεις φόρου (–€)<input type="number" id="credits" min="0" step="50" /></label>
-            </div>
-            <div class="row actions">
-              <button class="btn" id="calcBtn">Υπολογισμός</button>
-              <button class="btn ghost" id="clearBtn">Καθαρισμός</button>
-              <button class="btn ghost" id="printBtn">Εκτύπωση / PDF</button>
-              <button class="btn ghost" id="csvBtn">Λήψη CSV</button>
-            </div>
-            <p class="note">Ενδεικτικός υπολογισμός.</p>
-          </div>
-          <div class="calc-results">
-            <div class="summary card">
-              <div class="result-head">Σύνοψη</div>
-              <div class="row"><span>Φόρος Μισθωτών/Συντάξεων:</span><strong id="taxSalary">—</strong></div>
-              <div class="row"><span>Φόρος Επιχειρ. δραστηριότητας:</span><strong id="taxBusiness">—</strong></div>
-              <div class="row"><span>Προκαταβολή:</span><strong id="taxAdvance">—</strong></div>
-              <div class="row"><span>Φόρος Ακινήτων:</span><strong id="taxRental">—</strong></div>
-              <div class="row"><span>Τέλος επιτηδεύματος:</span><strong id="taxDuty">—</strong></div>
-              <div class="row"><span>Προπληρωμές:</span><strong id="taxPrepaid">—</strong></div>
-              <div class="row"><span>Πιστώσεις:</span><strong id="taxCredits">—</strong></div>
-              <div class="sep"></div>
-              <div class="row total"><span>Συνολικό:</span><strong id="taxTotal">—</strong></div>
-            </div>
-            <div class="breakdowns">
-              <div class="card"><h4>Μισθωτά/Συντάξεις</h4><table class="tbl" id="tblSalary"><thead><tr><th scope="col">Κλίμακες Φορολογίας</th><th scope="col">Ποσό</th><th scope="col">Συντελεστής</th><th scope="col">Φόρος</th></tr></thead><tbody></tbody></table></div>
-              <div class="card"><h4>Επιχειρ. δραστηριότητα</h4><table class="tbl" id="tblBusiness"><thead><tr><th scope="col">Κλίμακες Φορολογίας</th><th scope="col">Ποσό</th><th scope="col">Συντελεστής</th><th scope="col">Φόρος</th></tr></thead><tbody></tbody></table></div>
-              <div class="card"><h4>Ακίνητα</h4><table class="tbl" id="tblRental"><thead><tr><th scope="col">Κλίμακες Φορολογίας</th><th scope="col">Ποσό</th><th scope="col">Συντελεστής</th><th scope="col">Φόρος</th></tr></thead><tbody></tbody></table></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VAT Calculator Section -->
-    <section id="vat-calculator" class="section alt">
-      <div class="container">
-        <h2>Υπολογιστής ΦΠΑ</h2>
-        <p class="lead">Γρήγορος υπολογισμός ΦΠΑ για τιμολόγια και αγορές.</p>
-        <div class="card vat-calc">
-          <div class="calc-controls">
-            <div class="row">
-              <label>Συντελεστής ΦΠΑ
-                <select id="vatRate">
-                  <option value="0.24">24% (Κανονικός)</option>
-                  <option value="0.13">13% (Μειωμένος)</option>
-                  <option value="0.06">6% (Υπερμειωμένος)</option>
-                </select>
-              </label>
-              <label>Καθαρή αξία (€)
-                <input type="number" id="vatNet" min="0" step="0.01" placeholder="π.χ. 100">
-              </label>
-              <label>Τελική τιμή με ΦΠΑ (€)
-                <input type="number" id="vatGross" min="0" step="0.01" placeholder="π.χ. 124">
-              </label>
-            </div>
-            <div class="row actions">
-              <button class="btn small" id="vatCalcNet">Υπολόγισε από Καθαρή</button>
-              <button class="btn small ghost" id="vatCalcGross">Υπολόγισε από Τελική</button>
-            </div>
-          </div>
-          <div class="vat-results card" id="vatResults" style="margin-top:1rem;display:none">
-            <div class="row"><span>Καθαρή αξία:</span><strong id="vatResNet">—</strong></div>
-            <div class="row"><span>ΦΠΑ (<span id="vatResRate">24</span>%):</span><strong id="vatResVat">—</strong></div>
-            <div class="sep"></div>
-            <div class="row total"><span>Τελική τιμή:</span><strong id="vatResGross">—</strong></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <div class="float-cta mobile-only" role="navigation" aria-label="Γρήγορες ενέργειες">
-    <a class="btn small" href="index.html#meeting">Κράτηση 15’</a>
-    <a class="btn small" href="tel:+302431076222">Κλήση</a>
+<a class="skip-link" href="#main">Μετάβαση στο κύριο περιεχόμενο</a>
+<header class="sub-header">
+  <div class="sub-shell sub-nav-shell">
+    <a class="sub-brand" href="index.html" aria-label="D.P. Accounting Solutions — αρχική">
+      <span class="sub-brand-mark" aria-hidden="true"><span>DP</span></span>
+      <span class="sub-brand-copy"><strong>D.P. Accounting</strong><small>Solutions · Trikala</small></span>
+    </a>
+    <button type="button" class="sub-nav-toggle" aria-expanded="false" aria-controls="subNav"><span></span><span></span><span></span><span class="sr-only">Μενού</span></button>
+    <nav class="sub-nav" id="subNav" aria-label="Κύρια πλοήγηση"><a href="index.html#services">Υπηρεσίες</a><a href="tools.html" aria-current="page">Εργαλεία</a><a href="blog.html">Άρθρα</a><a class="sub-nav-cta" href="index.html#contact">Ας μιλήσουμε ↗</a></nav>
   </div>
-
-  <button id="scrollTop" class="scroll-top" aria-label="Επιστροφή στην κορυφή">↑</button>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-col"><p><span class="monogram" aria-hidden="true" style="vertical-align:middle;margin-right:.5rem">ΔΠ</span>© <span id="year"></span> D.P. Accounting Solutions • Λογιστικές Υπηρεσίες</p></div>
-      <div class="footer-col theme-col">
-        <button id="themeToggle" class="theme-toggle" aria-label="Εναλλαγή θέματος" aria-pressed="false"><span class="theme-toggle-light"><span class="ico">☀</span> Φωτεινό</span><span class="theme-toggle-dark"><span class="ico">🌙</span> Σκοτεινό</span></button>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js?v=v6.2" defer></script>
-  <script src="features.js?v=v6.2" defer></script>
+</header>
+<main id="main"><section class="page-hero"><div class="sub-shell page-hero-inner"><div><span class="page-code">TOOLS / 01</span><h1>Χρήσιμα εργαλεία,<br><em>με καθαρά όρια.</em></h1><p class="page-lead">Απλοί αριθμητικοί υπολογισμοί για γρήγορη αναφορά — όχι εξατομικευμένη φορολογική συμβουλή ή επιβεβαίωση υποχρέωσης.</p></div><aside class="hero-aside" aria-label="Στοιχεία σελίδας"><span>POSITIONING</span><strong>LOCAL · PRIVATE · NO TRACKING</strong></aside></div></section><section class="content-section"><div class="sub-shell"><div class="section-head"><span class="section-index">[ VAT ]</span><h2>Υπολογιστής ΦΠΑ.</h2><p>Ο υπολογισμός γίνεται τοπικά στον browser και δεν αποστέλλονται δεδομένα.</p></div><div class="tool-card"><div class="tool-grid"><label>Συντελεστής ΦΠΑ<select id="vatRate"><option value="0.24">24%</option><option value="0.13">13%</option><option value="0.06">6%</option></select></label><label>Καθαρή αξία (€)<input id="vatNet" type="number" min="0" step="0.01" inputmode="decimal" placeholder="100,00"></label><label>Τελική αξία με ΦΠΑ (€)<input id="vatGross" type="number" min="0" step="0.01" inputmode="decimal" placeholder="124,00"></label></div><div class="tool-actions"><button class="button" id="vatCalcNet" type="button">Από καθαρή αξία</button><button class="button secondary" id="vatCalcGross" type="button">Από τελική αξία</button></div><div class="tool-result" id="vatResults" aria-live="polite"><div class="result-row"><span>Καθαρή αξία</span><strong id="vatResNet">—</strong></div><div class="result-row"><span>ΦΠΑ (<span id="vatResRate">—</span>%)</span><strong id="vatResVat">—</strong></div><div class="result-row"><span>Τελική αξία</span><strong id="vatResGross">—</strong></div></div></div><div class="notice warning mt-24"><strong>Ενδεικτικός αριθμητικός υπολογισμός:</strong> Η επιλογή σωστού συντελεστή εξαρτάται από το αγαθό, την υπηρεσία, τον τόπο και τις ειδικές προϋποθέσεις. Επιβεβαιώστε την εφαρμογή πριν από έκδοση παραστατικού.</div></div></section><section class="content-section alt"><div class="sub-shell"><div class="section-head"><span class="section-index">[ SAFETY ]</span><h2>Γιατί αφαιρέθηκε ο<br>«υπολογιστής φόρου».</h2><p>Ένας στατικός υπολογιστής μπορεί να γίνει γρήγορα ανακριβής όταν αλλάζουν νόμοι, κλίμακες, μειώσεις ή προσωπικές προϋποθέσεις.</p></div><div class="editorial-policy"><div><h3>Χωρίς αποθήκευση</h3><p>Οι αριθμοί που πληκτρολογείτε δεν μεταδίδονται και δεν αποθηκεύονται.</p></div><div><h3>Χωρίς ψευδή ακρίβεια</h3><p>Δεν παρουσιάζουμε σύνθετη φορολογική εκτίμηση σαν βέβαιο αποτέλεσμα.</p></div><div><h3>Επίσημη επιβεβαίωση</h3><p>Για υποχρεώσεις και προθεσμίες χρησιμοποιούνται οι εκάστοτε επίσημες πηγές και τα πραγματικά δεδομένα.</p></div></div></div></section><section class="content-section"><div class="sub-shell"><div class="cta-panel"><div><h2>Ας δούμε τι χρειάζεται η επιχείρησή σας.</h2><p>Μία πρώτη επικοινωνία αρκεί για να χαρτογραφήσουμε το βασικό ζητούμενο και το κατάλληλο επόμενο βήμα.</p></div><a class="button" href="index.html#contact">Ζητήστε επικοινωνία ↗</a></div></div></section></main>
+<footer class="sub-footer">
+  <div class="sub-shell sub-footer-main">
+    <div class="sub-footer-brand"><span class="sub-brand-mark" aria-hidden="true"><span>DP</span></span><div><strong>D.P. Accounting Solutions</strong><p>Λογιστική με τεχνολογική αντίληψη, σαφή διαδικασία και προσωπική ευθύνη.</p></div></div>
+    <div class="sub-footer-links"><div><small>ΠΛΟΗΓΗΣΗ</small><a href="index.html#services">Υπηρεσίες</a><a href="tools.html">Εργαλεία</a><a href="blog.html">Άρθρα</a></div><div><small>ΕΠΙΚΟΙΝΩΝΙΑ</small><a href="tel:+302431076222">24310&nbsp;76222</a><a href="mailto:dpeconsolutions@gmail.com">dpeconsolutions@gmail.com</a><a href="privacy.html">Πολιτική Απορρήτου</a></div></div>
+  </div>
+  <div class="sub-shell sub-footer-bottom"><span>© <span data-current-year></span> D.P. Accounting Solutions</span><span>Τρίκαλα · Ελλάδα</span></div>
+</footer>
+<nav class="mobile-actions" aria-label="Γρήγορες ενέργειες"><a href="tel:+302431076222">Κλήση</a><a href="index.html#contact">Επικοινωνία ↗</a></nav>
+<script src="pages-2026.js?v=1.0" defer></script>
 </body>
 </html>

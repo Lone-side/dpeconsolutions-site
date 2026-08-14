@@ -1,63 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jimmi21.github.io/dpeconsolutions-site/index.html</loc>
-    <lastmod>2025-12-06</lastmod>
+    <loc>https://lone-side.github.io/dpeconsolutions-site/</loc>
+    <lastmod>2026-08-14</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jimmi21.github.io/dpeconsolutions-site/tools.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <loc>https://lone-side.github.io/dpeconsolutions-site/tools.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lone-side.github.io/dpeconsolutions-site/consulting.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lone-side.github.io/dpeconsolutions-site/faq.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lone-side.github.io/dpeconsolutions-site/case-studies.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lone-side.github.io/dpeconsolutions-site/funding.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lone-side.github.io/dpeconsolutions-site/privacy.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lone-side.github.io/dpeconsolutions-site/blog.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lone-side.github.io/dpeconsolutions-site/blog/pos-na-epilexete-logisti.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lone-side.github.io/dpeconsolutions-site/services/logistiki.html</loc>
+    <lastmod>2026-08-14</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jimmi21.github.io/dpeconsolutions-site/consulting.html</loc>
-    <lastmod>2025-12-05</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jimmi21.github.io/dpeconsolutions-site/faq.html</loc>
-    <lastmod>2025-12-05</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jimmi21.github.io/dpeconsolutions-site/case-studies.html</loc>
-    <lastmod>2025-12-05</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jimmi21.github.io/dpeconsolutions-site/funding.html</loc>
-    <lastmod>2025-12-05</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jimmi21.github.io/dpeconsolutions-site/privacy.html</loc>
-    <lastmod>2025-12-05</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jimmi21.github.io/dpeconsolutions-site/blog.html</loc>
-    <lastmod>2025-12-06</lastmod>
+    <loc>https://lone-side.github.io/dpeconsolutions-site/services/forologia.html</loc>
+    <lastmod>2026-08-14</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jimmi21.github.io/dpeconsolutions-site/services/logistiki.html</loc>
-    <lastmod>2025-12-06</lastmod>
-    <priority>0.8</priority>
+    <loc>https://lone-side.github.io/dpeconsolutions-site/services/misthodisia.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jimmi21.github.io/dpeconsolutions-site/services/forologia.html</loc>
-    <lastmod>2025-12-06</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jimmi21.github.io/dpeconsolutions-site/services/misthodisia.html</loc>
-    <lastmod>2025-12-06</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jimmi21.github.io/dpeconsolutions-site/services/xrimatodotika.html</loc>
-    <lastmod>2025-12-06</lastmod>
+    <loc>https://lone-side.github.io/dpeconsolutions-site/services/xrimatodotika.html</loc>
+    <lastmod>2026-08-14</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>

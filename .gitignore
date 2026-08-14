@@ -1,0 +1,7 @@
+# QA / build artifacts (not part of the published site)
+lh-*.json
+qa-*.png
+verify_layout.py
+capture_mobile_qa.py
+__pycache__/
+*.pyc
