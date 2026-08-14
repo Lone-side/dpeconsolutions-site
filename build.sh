@@ -18,7 +18,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 # Version from styles.css
-VERSION="v6.2"
+VERSION="v7.0"
 
 echo -e "${GREEN}Version:${NC} $VERSION"
 echo ""
@@ -83,7 +83,7 @@ done
 # Validate CSS files
 echo ""
 echo "Checking CSS files..."
-CSS_FILES=("styles.css" "styles-consulting.css")
+CSS_FILES=("site-2026.css" "styles.css" "styles-consulting.css")
 for file in "${CSS_FILES[@]}"; do
     if [[ -f "$file" ]]; then
         SIZE=$(wc -c < "$file")
@@ -96,7 +96,7 @@ done
 # Validate JS files
 echo ""
 echo "Checking JavaScript files..."
-JS_FILES=("script.js" "script-consulting.js" "calculator-core.js")
+JS_FILES=("site-2026.js" "script.js" "script-consulting.js" "calculator-core.js")
 for file in "${JS_FILES[@]}"; do
     if [[ -f "$file" ]]; then
         SIZE=$(wc -c < "$file")

@@ -68,7 +68,7 @@ Then open http://localhost:8000 in your browser.
 
 The site is deployed to GitHub Pages:
 
-**Live URL:** https://jimmi21.github.io/dpeconsolutions-site/
+**Live URL:** https://lone-side.github.io/dpeconsolutions-site/
 
 ### Manual Deploy
 1. Push changes to main branch
