@@ -83,7 +83,7 @@ done
 # Validate CSS files
 echo ""
 echo "Checking CSS files..."
-CSS_FILES=("site-2026.css" "styles.css" "styles-consulting.css")
+CSS_FILES=("site-2026.css" "pages-2026.css" "styles.css" "styles-consulting.css")
 for file in "${CSS_FILES[@]}"; do
     if [[ -f "$file" ]]; then
         SIZE=$(wc -c < "$file")
@@ -96,7 +96,7 @@ done
 # Validate JS files
 echo ""
 echo "Checking JavaScript files..."
-JS_FILES=("site-2026.js" "script.js" "script-consulting.js" "calculator-core.js")
+JS_FILES=("site-2026.js" "pages-2026.js" "script.js" "script-consulting.js" "calculator-core.js")
 for file in "${JS_FILES[@]}"; do
     if [[ -f "$file" ]]; then
         SIZE=$(wc -c < "$file")
