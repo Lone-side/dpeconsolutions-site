@@ -1,0 +1,63 @@
+/* ==========================================================================
+   D.P. Accounting Solutions — 3D Motion Layer
+   Progressive enhancement: κάθε κανόνας ενεργοποιείται μόνο όταν η
+   motion-3d.js προσθέσει την κλάση .m3d στο <html>. Χωρίς JS ή με
+   prefers-reduced-motion το site μένει ακριβώς όπως ήταν.
+   ========================================================================== */
+
+:root{--m3d-ease:cubic-bezier(.22,1,.36,1)}
+
+/* ---- Scroll progress bar ---------------------------------------------- */
+.m3d-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:1400;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#28d7f2,#5df2c2 62%,#7be8f7);box-shadow:0 0 14px rgba(40,215,242,.55);pointer-events:none}
+
+/* ---- Starfield canvas στα hero ---------------------------------------- */
+.m3d-stars{position:absolute;inset:0;z-index:0;pointer-events:none}
+.m3d .hero-layout,.m3d .hero-ticker,.m3d .hero .visual-label{position:relative;z-index:2}
+.m3d .hero-grid-bg{z-index:0}
+.m3d .page-hero-inner{z-index:1}
+
+/* ---- Είσοδος hero (μία φορά, στο load) -------------------------------- */
+@keyframes m3d-enter{from{opacity:0;transform:perspective(900px) translateY(34px) rotateX(9deg)}to{opacity:1;transform:perspective(900px) translateY(0) rotateX(0)}}
+@keyframes m3d-enter-visual{from{opacity:0;transform:translateY(36px) scale(.93)}to{opacity:1;transform:translateY(0) scale(1)}}
+.m3d .hero-copy>*{animation:m3d-enter .85s var(--m3d-ease) backwards}
+.m3d .hero-copy>*:nth-child(1){animation-delay:.05s}
+.m3d .hero-copy>*:nth-child(2){animation-delay:.14s}
+.m3d .hero-copy>*:nth-child(3){animation-delay:.24s}
+.m3d .hero-copy>*:nth-child(4){animation-delay:.34s}
+.m3d .hero-copy>*:nth-child(5){animation-delay:.46s}
+.m3d .hero-visual{animation:m3d-enter-visual 1.15s var(--m3d-ease) backwards .3s}
+.m3d .page-hero .breadcrumb{animation:m3d-enter .8s var(--m3d-ease) backwards .02s}
+.m3d .page-hero .page-code{animation:m3d-enter .8s var(--m3d-ease) backwards .06s}
+.m3d .page-hero h1{animation:m3d-enter .85s var(--m3d-ease) backwards .14s}
+.m3d .page-hero .page-lead{animation:m3d-enter .85s var(--m3d-ease) backwards .24s}
+.m3d .page-hero .hero-aside{animation:m3d-enter .85s var(--m3d-ease) backwards .36s}
+
+/* ---- 3D reveals -------------------------------------------------------- */
+/* Αναβάθμιση του υπάρχοντος .reveal (index) σε κίνηση με βάθος */
+.m3d .reveal{opacity:0;transform:perspective(1100px) translateY(48px) rotateX(8deg) scale(.99);transform-origin:50% 100%;transition:opacity .85s var(--m3d-ease),transform .85s var(--m3d-ease)}
+.m3d .reveal.visible{opacity:1;transform:none}
+/* Αυτόματα reveals για τις υποσελίδες (η κλάση μπαίνει από JS) */
+.m3d .m3d-reveal{opacity:0;transform:perspective(1100px) translateY(44px) rotateX(8deg);transform-origin:50% 100%;transition:opacity .85s var(--m3d-ease),transform .85s var(--m3d-ease);transition-delay:calc(var(--m3d-i,0)*80ms)}
+.m3d .m3d-reveal.visible{opacity:1;transform:none}
+
+/* ---- Micro-interactions ------------------------------------------------ */
+.m3d .brand-mark,.m3d .sub-brand-mark{transition:transform .7s var(--m3d-ease)}
+.m3d .brand:hover .brand-mark{transform:rotate(3deg) rotateY(360deg)}
+.m3d .sub-brand:hover .sub-brand-mark{transform:rotateY(360deg)}
+.m3d .service-row{transform:perspective(1200px);transition:padding .35s var(--ease,var(--m3d-ease)),background .3s,transform .4s var(--m3d-ease),box-shadow .4s var(--m3d-ease)}
+.m3d .service-row:hover{transform:perspective(1200px) rotateX(1.3deg) rotateY(-.5deg) translateZ(10px);box-shadow:0 24px 50px -30px rgba(11,29,52,.35)}
+
+/* ---- Tilt cards (η κλάση .m3d-tilt μπαίνει από JS στο πρώτο hover) ----- */
+/* Διπλή κλάση για να υπερισχύει των .reveal/.m3d-reveal κανόνων */
+.m3d .m3d-tilt.m3d-tilt{position:relative;opacity:1;transform:perspective(950px) rotateX(var(--m3d-rx,0deg)) rotateY(var(--m3d-ry,0deg)) translateZ(var(--m3d-tz,0px));transition:none;will-change:transform}
+.m3d .m3d-tilt.m3d-tilt::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:3;background:radial-gradient(460px circle at var(--m3d-gx,50%) var(--m3d-gy,50%),rgba(255,255,255,.14),transparent 62%);opacity:var(--m3d-glare,0);transition:opacity .35s}
+
+/* ---- Magnetic κουμπιά -------------------------------------------------- */
+.m3d .m3d-mag{transform:translate(var(--m3d-mx,0px),var(--m3d-my,0px)) translateZ(0);transition:background .2s,border-color .2s,color .2s}
+
+/* ---- Ασφάλεια: αν αλλάξει το prefers-reduced-motion εν ώρα πλοήγησης --- */
+@media(prefers-reduced-motion:reduce){
+  .m3d .reveal,.m3d .m3d-reveal{opacity:1;transform:none;transition:none}
+  .m3d .hero-copy>*,.m3d .hero-visual,.m3d .page-hero .breadcrumb,.m3d .page-hero .page-code,.m3d .page-hero h1,.m3d .page-hero .page-lead,.m3d .page-hero .hero-aside{animation:none}
+  .m3d-progress,.m3d-stars{display:none}
+}
