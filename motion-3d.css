@@ -7,14 +7,28 @@
 
 :root{--m3d-ease:cubic-bezier(.22,1,.36,1)}
 
+/* ---- Ομαλή μετάβαση μεταξύ σελίδων (View Transitions, όπου υποστηρίζεται) */
+@media not (prefers-reduced-motion:reduce){
+  @view-transition{navigation:auto}
+  ::view-transition-old(root){animation:m3d-vt-out .2s ease both}
+  ::view-transition-new(root){animation:m3d-vt-in .32s ease both}
+}
+@keyframes m3d-vt-out{to{opacity:0;transform:translateY(-10px)}}
+@keyframes m3d-vt-in{from{opacity:0;transform:translateY(12px)}}
+
 /* ---- Scroll progress bar ---------------------------------------------- */
 .m3d-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:1400;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#28d7f2,#5df2c2 62%,#7be8f7);box-shadow:0 0 14px rgba(40,215,242,.55);pointer-events:none}
 
-/* ---- Starfield canvas στα hero ---------------------------------------- */
+/* ---- Starfield canvas + φως που ακολουθεί τον κέρσορα ------------------ */
 .m3d-stars{position:absolute;inset:0;z-index:0;pointer-events:none}
+.m3d-glow{position:absolute;left:0;top:0;width:540px;height:540px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(40,215,242,.13),rgba(40,215,242,.045) 45%,transparent 70%);transform:translate(-50%,-50%);opacity:0;transition:opacity .6s}
+.m3d-glow.on{opacity:1}
 .m3d .hero-layout,.m3d .hero-ticker,.m3d .hero .visual-label{position:relative;z-index:2}
 .m3d .hero-grid-bg{z-index:0}
 .m3d .page-hero-inner{z-index:1}
+.m3d .tech-layout,.m3d .contact-layout{position:relative;z-index:1}
+/* Παύση των διακοσμητικών animations όταν το section βγει από την οθόνη */
+.m3d .m3d-idle .hero-ticker>div,.m3d .m3d-idle .ledger-core,.m3d .m3d-idle .orbit,.m3d .m3d-idle .data-plane,.m3d .m3d-idle .particle{animation-play-state:paused}
 
 /* ---- Είσοδος hero (μία φορά, στο load) -------------------------------- */
 @keyframes m3d-enter{from{opacity:0;transform:perspective(900px) translateY(34px) rotateX(9deg)}to{opacity:1;transform:perspective(900px) translateY(0) rotateX(0)}}
@@ -40,6 +54,16 @@
 .m3d .m3d-reveal{opacity:0;transform:perspective(1100px) translateY(44px) rotateX(8deg);transform-origin:50% 100%;transition:opacity .85s var(--m3d-ease),transform .85s var(--m3d-ease);transition-delay:calc(var(--m3d-i,0)*80ms)}
 .m3d .m3d-reveal.visible{opacity:1;transform:none}
 
+/* ---- Ζωντάνεμα των γραφημάτων του τεχνολογικού section στο reveal ------ */
+.m3d .system-stack .bars i{transform:scaleY(0);transform-origin:bottom;transition:transform .9s var(--m3d-ease) .35s}
+.m3d .system-stack .bars i:nth-child(2){transition-delay:.5s}
+.m3d .system-stack .bars i:nth-child(3){transition-delay:.65s}
+.m3d .system-stack.visible .bars i{transform:scaleY(1)}
+.m3d .system-stack .mini-flow b{opacity:0;transform:translateY(8px);transition:opacity .5s var(--m3d-ease) .35s,transform .5s var(--m3d-ease) .35s}
+.m3d .system-stack .mini-flow b:nth-of-type(2){transition-delay:.5s}
+.m3d .system-stack .mini-flow b:nth-of-type(3){transition-delay:.65s}
+.m3d .system-stack.visible .mini-flow b{opacity:1;transform:none}
+
 /* ---- Micro-interactions ------------------------------------------------ */
 .m3d .brand-mark,.m3d .sub-brand-mark{transition:transform .7s var(--m3d-ease)}
 .m3d .brand:hover .brand-mark{transform:rotate(3deg) rotateY(360deg)}
@@ -59,5 +83,6 @@
 @media(prefers-reduced-motion:reduce){
   .m3d .reveal,.m3d .m3d-reveal{opacity:1;transform:none;transition:none}
   .m3d .hero-copy>*,.m3d .hero-visual,.m3d .page-hero .breadcrumb,.m3d .page-hero .page-code,.m3d .page-hero h1,.m3d .page-hero .page-lead,.m3d .page-hero .hero-aside{animation:none}
-  .m3d-progress,.m3d-stars{display:none}
+  .m3d .system-stack .bars i,.m3d .system-stack .mini-flow b{opacity:1;transform:none;transition:none}
+  .m3d-progress,.m3d-stars,.m3d-glow{display:none}
 }

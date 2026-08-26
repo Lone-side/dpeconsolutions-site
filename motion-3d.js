@@ -122,8 +122,12 @@
         const r = el.getBoundingClientRect();
         const nx = (e.clientX - r.left) / r.width - 0.5;
         const ny = (e.clientY - r.top) / r.height - 0.5;
-        s.try = nx * 7;
-        s.trx = ny * -5.5;
+        // Ηπιότερη κλίση σε μεγάλα στοιχεία, καμία όταν ο χρήστης πληκτρολογεί μέσα
+        const focused = el.matches(':focus-within');
+        const maxY = r.width > 620 ? 3 : 7;
+        const maxX = r.height > 420 ? 2.6 : 5.5;
+        s.try = focused ? 0 : nx * maxY;
+        s.trx = focused ? 0 : ny * -maxX;
         el.style.setProperty('--m3d-gx', ((nx + 0.5) * 100).toFixed(1) + '%');
         el.style.setProperty('--m3d-gy', ((ny + 0.5) * 100).toFixed(1) + '%');
       });
@@ -167,7 +171,7 @@
   /* ---------------------------------------------------------------- */
   /* Starfield: σωματίδια με βάθος + γραμμές-αστερισμοί στα hero       */
   /* ---------------------------------------------------------------- */
-  const makeStars = host => {
+  const makeStars = (host, density) => {
     const canvas = document.createElement('canvas');
     canvas.className = 'm3d-stars';
     canvas.setAttribute('aria-hidden', 'true');
@@ -189,7 +193,7 @@
     resize();
     addEventListener('resize', resize);
 
-    const N = Math.max(34, Math.min(110, Math.round((w * h) / 14000)));
+    const N = Math.max(24, Math.min(110, Math.round((w * h) / 14000 * density)));
     const stars = Array.from({ length: N }, () => ({
       x: Math.random() * 2 - 1,
       y: Math.random() * 2 - 1,
@@ -199,12 +203,22 @@
     }));
 
     let px = 0, py = 0, tpx = 0, tpy = 0;
+    let glow = null, gx = 0, gy = 0, tgx = 0, tgy = 0;
     if (fine.matches) {
+      glow = document.createElement('div');
+      glow.className = 'm3d-glow';
+      glow.setAttribute('aria-hidden', 'true');
+      host.appendChild(glow);
+      cleanups.push(() => glow.remove());
       host.addEventListener('pointermove', e => {
         const r = host.getBoundingClientRect();
         tpx = (e.clientX - r.left) / r.width - 0.5;
         tpy = (e.clientY - r.top) / r.height - 0.5;
+        tgx = e.clientX - r.left;
+        tgy = e.clientY - r.top;
+        if (!glow.classList.contains('on')) { gx = tgx; gy = tgy; glow.classList.add('on'); }
       });
+      host.addEventListener('pointerleave', () => glow.classList.remove('on'));
     }
 
     let raf = 0, inView = true;
@@ -212,6 +226,11 @@
       raf = requestAnimationFrame(tick);
       px = lerp(px, tpx, 0.04);
       py = lerp(py, tpy, 0.04);
+      if (glow) {
+        gx = lerp(gx, tgx, 0.08);
+        gy = lerp(gy, tgy, 0.08);
+        glow.style.transform = `translate(${(gx - 270).toFixed(1)}px,${(gy - 270).toFixed(1)}px)`;
+      }
       ctx.clearRect(0, 0, w, h);
       const cx = w * 0.5, cy = h * 0.45;
       const pts = [];
@@ -254,14 +273,16 @@
     const start = () => { if (!raf && inView && !document.hidden && !reduce.matches) raf = requestAnimationFrame(tick); };
     const stop = () => { cancelAnimationFrame(raf); raf = 0; };
     new IntersectionObserver(entries => {
-      inView = entries[0].isIntersecting;
+      inView = entries[entries.length - 1].isIntersecting;
+      host.classList.toggle('m3d-idle', !inView);
       inView ? start() : stop();
     }).observe(host);
     document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
     cleanups.push(stop);
     start();
   };
-  document.querySelectorAll('.hero,.page-hero').forEach(makeStars);
+  document.querySelectorAll('.hero,.page-hero').forEach(el => makeStars(el, 1));
+  document.querySelectorAll('.technology-section,.contact-section').forEach(el => makeStars(el, 0.5));
 
   /* Αν ο χρήστης ενεργοποιήσει reduced motion εν ώρα πλοήγησης, όλα σβήνουν */
   reduce.addEventListener?.('change', e => {
