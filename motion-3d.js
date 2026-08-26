@@ -4,7 +4,67 @@
 (() => {
   'use strict';
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-  if (reduce.matches) return;
+
+  /* Με ενεργή «μειωμένη κίνηση» (π.χ. Windows: Εφέ κίνησης = κλειστά) δεν
+     τρέχει κανένα animation — ζωγραφίζεται όμως μία στατική εικόνα αστεριών
+     στα σκούρα sections, ώστε το site να έχει το νέο βάθος χωρίς κίνηση. */
+  const paintStaticStars = () => {
+    document.querySelectorAll('.hero,.page-hero,.technology-section,.contact-section').forEach(host => {
+      const canvas = document.createElement('canvas');
+      canvas.className = 'm3d-stars';
+      canvas.style.cssText = 'position:absolute;inset:0;z-index:0;pointer-events:none';
+      canvas.setAttribute('aria-hidden', 'true');
+      host.appendChild(canvas);
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      const draw = () => {
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        const w = host.clientWidth, h = host.clientHeight;
+        canvas.width = Math.round(w * dpr);
+        canvas.height = Math.round(h * dpr);
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const N = Math.max(20, Math.min(80, Math.round((w * h) / 20000)));
+        const pts = [];
+        for (let i = 0; i < N; i++) {
+          const depth = Math.random();
+          pts.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            r: depth * 1.9 + 0.4,
+            a: depth * 0.6 + 0.12,
+            c: Math.random() < 0.82 ? '40,215,242' : '93,242,194'
+          });
+        }
+        ctx.lineWidth = 1;
+        for (let i = 0; i < pts.length; i++) {
+          for (let j = i + 1; j < pts.length; j++) {
+            const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+            const d2 = dx * dx + dy * dy;
+            if (d2 < 96 * 96) {
+              const t = (1 - Math.sqrt(d2) / 96) * 0.18 * Math.min(pts[i].a, pts[j].a);
+              ctx.strokeStyle = `rgba(40,215,242,${t.toFixed(3)})`;
+              ctx.beginPath();
+              ctx.moveTo(pts[i].x, pts[i].y);
+              ctx.lineTo(pts[j].x, pts[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        for (const p of pts) {
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(${p.c},${p.a.toFixed(3)})`;
+          ctx.arc(p.x, p.y, p.r, 0, 6.2832);
+          ctx.fill();
+        }
+      };
+      draw();
+      addEventListener('resize', draw);
+    });
+  };
+
+  if (reduce.matches) { paintStaticStars(); return; }
 
   const root = document.documentElement;
   root.classList.add('m3d');
@@ -289,5 +349,6 @@
     if (!e.matches) return;
     root.classList.remove('m3d');
     cleanups.forEach(fn => fn());
+    paintStaticStars();
   });
 })();

@@ -84,5 +84,8 @@
   .m3d .reveal,.m3d .m3d-reveal{opacity:1;transform:none;transition:none}
   .m3d .hero-copy>*,.m3d .hero-visual,.m3d .page-hero .breadcrumb,.m3d .page-hero .page-code,.m3d .page-hero h1,.m3d .page-hero .page-lead,.m3d .page-hero .hero-aside{animation:none}
   .m3d .system-stack .bars i,.m3d .system-stack .mini-flow b{opacity:1;transform:none;transition:none}
-  .m3d-progress,.m3d-stars,.m3d-glow{display:none}
+  .m3d-progress,.m3d-glow{display:none}
+  /* Το στατικό έναστρο φόντο παραμένει ορατό, πίσω από το περιεχόμενο */
+  .hero-layout,.hero-ticker,.hero .visual-label{position:relative;z-index:2}
+  .page-hero-inner,.tech-layout,.contact-layout{position:relative;z-index:1}
 }
