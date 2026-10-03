@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-02T10:17:51.487Z",
+  "generated": "2026-10-03T09:38:49.107Z",
   "source": "auto: recurring rules + data/overrides.json",
   "note": "Ενδεικτικές ημερομηνίες. Οι έκτακτες/ετήσιες μπαίνουν από data/overrides.json.",
   "items": [
@@ -128,6 +128,24 @@
       "name": "VIES / Intrastat",
       "meta": "Ενδοκοινοτικές συναλλαγές",
       "category": "other"
+    },
+    {
+      "date": "2027-03-31",
+      "name": "ΦΠΑ — Περιοδική δήλωση",
+      "meta": "Μηνιαία υποβολή & καταβολή",
+      "category": "vat"
+    },
+    {
+      "date": "2027-03-31",
+      "name": "Παρακρατούμενοι φόροι",
+      "meta": "Απόδοση παρακρατήσεων",
+      "category": "withholding"
+    },
+    {
+      "date": "2027-03-31",
+      "name": "ΑΠΔ / Εισφορές ΕΦΚΑ",
+      "meta": "Μισθοδοσία προηγ. μήνα",
+      "category": "payroll"
     }
   ]
 }
