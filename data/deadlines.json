@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-28T10:19:05.584Z",
+  "generated": "2026-10-29T10:41:23.248Z",
   "source": "auto: recurring rules + data/overrides.json",
   "note": "Ενδεικτικές ημερομηνίες. Οι έκτακτες/ετήσιες μπαίνουν από data/overrides.json.",
   "items": [
@@ -140,6 +140,12 @@
       "name": "ΑΠΔ / Εισφορές ΕΦΚΑ",
       "meta": "Μισθοδοσία προηγ. μήνα",
       "category": "payroll"
+    },
+    {
+      "date": "2027-04-26",
+      "name": "VIES / Intrastat",
+      "meta": "Ενδοκοινοτικές συναλλαγές",
+      "category": "other"
     }
   ]
 }
